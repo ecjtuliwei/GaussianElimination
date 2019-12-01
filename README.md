@@ -26,7 +26,7 @@
 
 
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpscaFfQB.png) | (2.1.1) |
+|      | ![img](file:ksohtml/wpscaFfQB.png) | (2.1.1) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
