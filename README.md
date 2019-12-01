@@ -16,8 +16,6 @@
 
 ​	科学研究或者工程建设当中经常会遇到许多变量呈现线性关系的情况, 通常的做法是将这些问题线性化, 转化为线性方程组。因此线性方程组的高效求解格外重要。矩阵分解的线性线性方程的求解方法有很多。一般的, 我们通过一些基本定理再经过转化进而简化求解, 而在计算机中应用更为常见的是结合线性方程组系数以及常数形成矩阵, 再利用矩阵的特点和性质来求解。本文中我们主要讨论高斯消元法、列选主元的高斯消元法、全选主元的高斯消元法求解线性方程组及高斯-若当法求矩阵的逆。
 
- 
-
 ## **2** **算法原理及实现过程**
 
 ### 2.1高斯消元法
@@ -32,69 +30,69 @@
 
 ​	或写为矩阵形式
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsMs9myY.png) | (2.1.2) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsMs9myY.png) | (2.1.2) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-简记为![img](file:////tmp/wps-liwei/ksohtml/wpsqlxxgl.jpg)，要求解线性方程组就是要求出![img](file:////tmp/wps-liwei/ksohtml/wpsmVAJYH.jpg)。
+简记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqlxxgl.jpg)，要求解线性方程组就是要求出![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmVAJYH.jpg)。
 
 ​	高斯消元法的基本思想是通过矩阵的初等变换逐次把系数矩阵**A**化为上三角或下三角矩阵，再用回代的方法求出方程组的解。高斯消元过程中选取矩阵对角元素作为主元进行消元操作，如果对角元素出现0，则消元过程无法进行。
 
 ​	以下为高斯消元法的过程：
 
-​	将方程组(2.1)记为![img](file:////tmp/wps-liwei/ksohtml/wpscSJXG4.jpg)，其中
+​	将方程组(2.1)记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscSJXG4.jpg)，其中
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsy7Ddpr.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsy7Ddpr.png)
 
 (1) 第一步(k = 1).
 
-设![img](file:////tmp/wps-liwei/ksohtml/wps07Ov7N.jpg)，首先计算乘数
+设![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps07Ov7N.jpg)，首先计算乘数
 
-![img](file:////tmp/wps-liwei/ksohtml/wps4HCPPa.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps4HCPPa.png)
 
-用![img](file:////tmp/wps-liwei/ksohtml/wpsIerbyx.jpg)乘方程组(2.1)的第一个方程，加到第i个![img](file:////tmp/wps-liwei/ksohtml/wpsIcOygU.jpg)方程上,消去方程组(2.1.1)的从第2个方程到第n个方程中的未知数![img](file:////tmp/wps-liwei/ksohtml/wpsSxUXYg.jpg),得到与方程组(2.1)等价的线性方程组
+用![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIerbyx.jpg)乘方程组(2.1)的第一个方程，加到第i个![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIcOygU.jpg)方程上,消去方程组(2.1.1)的从第2个方程到第n个方程中的未知数![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsSxUXYg.jpg),得到与方程组(2.1)等价的线性方程组
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsEAdpHD.png) | (2.1.3) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsEAdpHD.png) | (2.1.3) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-简记为![img](file:////tmp/wps-liwei/ksohtml/wpsYqpTp0.jpg),其中![img](file:////tmp/wps-liwei/ksohtml/wpsiR5o8m.jpg)，![img](file:////tmp/wps-liwei/ksohtml/wps8poWQJ.jpg)的元素计算公式为
+简记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsYqpTp0.jpg),其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsiR5o8m.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8poWQJ.jpg)的元素计算公式为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsUsvvz6.jpg) | (2.1.4) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsUsvvz6.jpg) | (2.1.4) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-(2) 第k次消元![img](file:////tmp/wps-liwei/ksohtml/wpssiN6ht.jpg).
+(2) 第k次消元![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpssiN6ht.jpg).
 
-设上述第1步,![img](file:////tmp/wps-liwei/ksohtml/wps6yHJ0P.jpg),第k-1步消元过程计算已完成,即已计算好与方程组(2.1.1)等价的线性方程组
+设上述第1步,![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps6yHJ0P.jpg),第k-1步消元过程计算已完成,即已计算好与方程组(2.1.1)等价的线性方程组
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsU61oJc.png) | (2.1.5) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsU61oJc.png) | (2.1.5) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-简记为![img](file:////tmp/wps-liwei/ksohtml/wpsiLa8rz.jpg),设![img](file:////tmp/wps-liwei/ksohtml/wps8nTSaW.jpg),计算乘数
+简记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsiLa8rz.jpg),设![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8nTSaW.jpg),计算乘数
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsYQmFTi.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsYQmFTi.png)
 
-用![img](file:////tmp/wps-liwei/ksohtml/wpsIaFtCF.jpg)乘方程组(2.1.5)的第k个方程，加到第i个![img](file:////tmp/wps-liwei/ksohtml/wpsmvDjl2.jpg)方程上,消去从第k+1个方程到第n个方程中的未知数![img](file:////tmp/wps-liwei/ksohtml/wpsKvlb4o.jpg),得到与方程组(2.1.1)等价的线性方程组![img](file:////tmp/wps-liwei/ksohtml/wpsCbF4ML.jpg).![img](file:////tmp/wps-liwei/ksohtml/wpsGhBZv8.jpg),![img](file:////tmp/wps-liwei/ksohtml/wpsOJ1Vev.jpg)元素的计算公式为
+用![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIaFtCF.jpg)乘方程组(2.1.5)的第k个方程，加到第i个![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmvDjl2.jpg)方程上,消去从第k+1个方程到第n个方程中的未知数![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsKvlb4o.jpg),得到与方程组(2.1.1)等价的线性方程组![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsCbF4ML.jpg).![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGhBZv8.jpg),![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsOJ1Vev.jpg)元素的计算公式为
 
-![img](file:////tmp/wps-liwei/ksohtml/wpskClUXR.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpskClUXR.png)
 
-显然![img](file:////tmp/wps-liwei/ksohtml/wpsg6TUGe.jpg)中从第1行到第k行与![img](file:////tmp/wps-liwei/ksohtml/wpsur9WpB.jpg)相同.
+显然![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsg6TUGe.jpg)中从第1行到第k行与![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsur9WpB.jpg)相同.
 
-(3) 继续上述过程,且设![img](file:////tmp/wps-liwei/ksohtml/wpsIS708X.jpg),直到完成第n-1步消元计算,最后得到
+(3) 继续上述过程,且设![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIS708X.jpg),直到完成第n-1步消元计算,最后得到
 
-与原方程组等价的简单方程组![img](file:////tmp/wps-liwei/ksohtml/wpsIGX6Rk.jpg),即
+与原方程组等价的简单方程组![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIGX6Rk.jpg),即
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsmPXeBH.png) | (2.1.6) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmPXeBH.png) | (2.1.6) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
 由方程组(2.1.1)化为方程组(2.1.6)的过程称为消元过程.
 
-如果![img](file:////tmp/wps-liwei/ksohtml/wpsIg8pk4.jpg)是非奇异矩阵,且![img](file:////tmp/wps-liwei/ksohtml/wpsONZC3q.jpg),求解三角矩阵线性方程组(2.1.6)得到求解公式
+如果![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIg8pk4.jpg)是非奇异矩阵,且![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsONZC3q.jpg),求解三角矩阵线性方程组(2.1.6)得到求解公式
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsGLaSMN.png) | (2.1.7) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGLaSMN.png) | (2.1.7) |
 | ---- | :--------------------------------------------------- | ------- |
 |      |                                                      |         |
 
@@ -104,37 +102,37 @@
 
 **2****.2****列选主元的高斯消元法**
 
-​	在高斯消元法中,对第k行消元过程中需要将其余行除以对角线元素![img](file:////tmp/wps-liwei/ksohtml/wpsGzYawa.jpg)，每次消元用作除数的元素叫做主元，如果主元为0，则消元无法继续进行。
+​	在高斯消元法中,对第k行消元过程中需要将其余行除以对角线元素![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGzYawa.jpg)，每次消元用作除数的元素叫做主元，如果主元为0，则消元无法继续进行。
 
 ​	列选主元的高斯消元法通过找寻主元所在列及主元列之后行元素中绝对值最大的元素并通过初等行变换将最大元素换到主元的位置上再进行消元操作。
 
 ​	列选主元的实现过程如下
 
-(1) 构造增广矩阵![img](file:////tmp/wps-liwei/ksohtml/wpsGdTvfx.jpg)，首先在![img](file:////tmp/wps-liwei/ksohtml/wpsaNlSYT.jpg)的第一列中选取绝对值最大的元素作为主元素,
+(1) 构造增广矩阵![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGdTvfx.jpg)，首先在![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsaNlSYT.jpg)的第一列中选取绝对值最大的元素作为主元素,
 
 例如
 
-![img](file:////tmp/wps-liwei/ksohtml/wpssOHgIg.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpssOHgIg.png)
 
-然后交换**B**的第1行与第![img](file:////tmp/wps-liwei/ksohtml/wpsO58GrD.jpg)行，经过第1次消元得到
+然后交换**B**的第1行与第![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsO58GrD.jpg)行，经过第1次消元得到
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsQWb9a0.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQWb9a0.jpg) 
 
-(2) 重复上述过程，设已完成第k-1步的选主元素，交换两行及消元计算，![img](file:////tmp/wps-liwei/ksohtml/wps4ncDUm.jpg)化为
+(2) 重复上述过程，设已完成第k-1步的选主元素，交换两行及消元计算，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps4ncDUm.jpg)化为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsgYF9DJ.png) | (2.2.1) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsgYF9DJ.png) | (2.2.1) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-其中![img](file:////tmp/wps-liwei/ksohtml/wps64zKn6.jpg)的元素仍记为![img](file:////tmp/wps-liwei/ksohtml/wpso6bn7s.jpg)，![img](file:////tmp/wps-liwei/ksohtml/wpsQin1QP.jpg)的元素仍记为![img](file:////tmp/wps-liwei/ksohtml/wpsqv8GAc.jpg).
+其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps64zKn6.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpso6bn7s.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQin1QP.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqv8GAc.jpg).
 
-(3) 第k步选主元素,即确定![img](file:////tmp/wps-liwei/ksohtml/wpsQYopkz.jpg),使
+(3) 第k步选主元素,即确定![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQYopkz.jpg),使
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsG7n93V.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsG7n93V.png)
 
-交换![img](file:////tmp/wps-liwei/ksohtml/wpsyxdVNi.jpg)第k行与![img](file:////tmp/wps-liwei/ksohtml/wpskuDIxF.jpg)(![img](file:////tmp/wps-liwei/ksohtml/wpsS7Exh2.jpg))行的元素,再进行消元计算,最后将原线性方程组化为
+交换![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsyxdVNi.jpg)第k行与![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpskuDIxF.jpg)(![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsS7Exh2.jpg))行的元素,再进行消元计算,最后将原线性方程组化为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsyxPo1o.png) | (2.2.2) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsyxPo1o.png) | (2.2.2) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
@@ -148,33 +146,33 @@
 
 ​	全选主元的实现过程如下
 
-(1) 构造增广矩阵![img](file:////tmp/wps-liwei/ksohtml/wpsg6xjLL.jpg)，首先在![img](file:////tmp/wps-liwei/ksohtml/wpscQQfv8.jpg)的所有元素中选取绝对值最大的元素作为主元
+(1) 构造增广矩阵![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsg6xjLL.jpg)，首先在![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscQQfv8.jpg)的所有元素中选取绝对值最大的元素作为主元
 
 素,例如
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsQeVdfv.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQeVdfv.png)
 
-然后交换**B**的第1行与第![img](file:////tmp/wps-liwei/ksohtml/wpsES0dZR.jpg)行，交换**B**的第1列与第![img](file:////tmp/wps-liwei/ksohtml/wpsQcUfJe.jpg)列，经过第1次消元得到
+然后交换**B**的第1行与第![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsES0dZR.jpg)行，交换**B**的第1列与第![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQcUfJe.jpg)列，经过第1次消元得到
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsmvvjtB.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmvvjtB.jpg) 
 
 ​	如果进行了列变换,则将列变换记录到**x**的位置信息里.
 
-(2) 重复上述过程，设已完成第k-1步的选主元素，交换两行及消元计算，![img](file:////tmp/wps-liwei/ksohtml/wpsaVfpdY.jpg)化为
+(2) 重复上述过程，设已完成第k-1步的选主元素，交换两行及消元计算，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsaVfpdY.jpg)化为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsQazxXk.png) | (2.3.1) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQazxXk.png) | (2.3.1) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-其中![img](file:////tmp/wps-liwei/ksohtml/wpsqbaKHH.jpg)的元素仍记为![img](file:////tmp/wps-liwei/ksohtml/wpsYAsYr4.jpg)，![img](file:////tmp/wps-liwei/ksohtml/wpsyBnecr.jpg)的元素仍记为![img](file:////tmp/wps-liwei/ksohtml/wps6kUvWN.jpg).
+其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqbaKHH.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsYAsYr4.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsyBnecr.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps6kUvWN.jpg).
 
-(3) 第k步选主元素,即确定![img](file:////tmp/wps-liwei/ksohtml/wpsA0jPGa.jpg),使
+(3) 第k步选主元素,即确定![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsA0jPGa.jpg),使
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsm9larx.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsm9larx.png)
 
-交换![img](file:////tmp/wps-liwei/ksohtml/wpsECixbU.jpg)第k行与![img](file:////tmp/wps-liwei/ksohtml/wpsu5LVVg.jpg)(![img](file:////tmp/wps-liwei/ksohtml/wpsCLRlGD.jpg))行的元素, 交换![img](file:////tmp/wps-liwei/ksohtml/wpsE0uNq0.jpg)第k列与![img](file:////tmp/wps-liwei/ksohtml/wpsQKHgbn.jpg)(![img](file:////tmp/wps-liwei/ksohtml/wpseDvLVJ.jpg))列的元素,再进行消元计算,最后将原线性方程组化为
+交换![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsECixbU.jpg)第k行与![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsu5LVVg.jpg)(![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsCLRlGD.jpg))行的元素, 交换![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsE0uNq0.jpg)第k列与![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQKHgbn.jpg)(![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpseDvLVJ.jpg))列的元素,再进行消元计算,最后将原线性方程组化为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsmBsiG6.png) | (2.3.2) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmBsiG6.png) | (2.3.2) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
@@ -190,35 +188,35 @@
 
 ​	列选主元的高斯-若当消元法实现过程如下
 
-(1) 	构造增广矩阵![img](file:////tmp/wps-liwei/ksohtml/wpsynsTqt.jpg)，首先在![img](file:////tmp/wps-liwei/ksohtml/wps0b9vbQ.jpg)的第一列中选取绝对值最大的元素作为主元素,
+(1) 	构造增广矩阵![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsynsTqt.jpg)，首先在![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps0b9vbQ.jpg)的第一列中选取绝对值最大的元素作为主元素,
 
 例如
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsEcFaWc.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsEcFaWc.png)
 
-然后交换**B**的第1行与第![img](file:////tmp/wps-liwei/ksohtml/wps0nxRGz.jpg)行，经过第1次消元得到
+然后交换**B**的第1行与第![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps0nxRGz.jpg)行，经过第1次消元得到
 
-![img](file:////tmp/wps-liwei/ksohtml/wpseh2zrW.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpseh2zrW.jpg) 
 
-(2) 重复上述过程，设已完成第k-1步的选主元素，交换两行及消元计算，![img](file:////tmp/wps-liwei/ksohtml/wpscarkcj.jpg)化为
+(2) 重复上述过程，设已完成第k-1步的选主元素，交换两行及消元计算，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscarkcj.jpg)化为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpsUaM7WF.png) | (2.4.1) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsUaM7WF.png) | (2.4.1) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-其中![img](file:////tmp/wps-liwei/ksohtml/wpsko0ZH2.jpg)的元素仍记为![img](file:////tmp/wps-liwei/ksohtml/wps8pQTsp.jpg)，![img](file:////tmp/wps-liwei/ksohtml/wpscufPdM.jpg)的元素仍记为![img](file:////tmp/wps-liwei/ksohtml/wpscuhMY8.jpg).
+其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsko0ZH2.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8pQTsp.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscufPdM.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscuhMY8.jpg).
 
-(3) 第k步选主元素,即确定![img](file:////tmp/wps-liwei/ksohtml/wps8X9KJv.jpg),使
+(3) 第k步选主元素,即确定![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8X9KJv.jpg),使
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsGtFLuS.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGtFLuS.png)
 
-交换![img](file:////tmp/wps-liwei/ksohtml/wpsSH1Nff.jpg)第k行与![img](file:////tmp/wps-liwei/ksohtml/wps6K1R0B.jpg)(![img](file:////tmp/wps-liwei/ksohtml/wpswuCXLY.jpg))行的元素,再进行消元计算,最后将增广矩阵化为
+交换![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsSH1Nff.jpg)第k行与![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps6K1R0B.jpg)(![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpswuCXLY.jpg))行的元素,再进行消元计算,最后将增广矩阵化为
 
-|      | ![img](file:////tmp/wps-liwei/ksohtml/wpswqk5wl.png) | (2.4.2) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpswqk5wl.png) | (2.4.2) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
-![img](file:////tmp/wps-liwei/ksohtml/wpswoBfiI.jpg)即为矩阵**A**的逆矩阵。
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpswoBfiI.jpg)即为矩阵**A**的逆矩阵。
 
 ​	若构建增广矩阵时不是采用单位矩阵，而是如同高斯消元时将方程组的右边加到系数矩阵后，采用高斯-若当的方法方法对增广矩阵消元后的到的最后一列就是方程组的解
 
@@ -238,19 +236,19 @@
 
 ​	在程序实现过程中，首先需要创建一个用于计算的矩阵，同样用于测试。在本次实验中，通过创建随机的系数矩阵和一组解x，计算得到b来创建一个已知所有元素的方程组用于测试，将A和b用于计算，得到的结果与x进行对比来验证算法的准确性。例如
 
-![img](file:////tmp/wps-liwei/ksohtml/wps0div34.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps0div34.png)
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsGfEOOr.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGfEOOr.png)
 
-通过![img](file:////tmp/wps-liwei/ksohtml/wpsMSY9zO.png)得到![img](file:////tmp/wps-liwei/ksohtml/wpsCvfxlb.png)
+通过![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsMSY9zO.png)得到![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsCvfxlb.png)
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsWBdW6x.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsWBdW6x.png)
 
 构建增广矩阵为
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsKzroSU.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsKzroSU.png)
 
-对B进行消元求解后得到的解与![img](file:////tmp/wps-liwei/ksohtml/wpsClSUDh.png)对比验证算法是否准确
+对B进行消元求解后得到的解与![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsClSUDh.png)对比验证算法是否准确
 
  
 
@@ -258,11 +256,11 @@
 
 ​	本次实验用Python语言实现，所有的矩阵和向量都用numpy.array实现，算法通过计算公式实现，用一个大循环来对第k行进行操作，在高斯消元法中，每个大循环内先从第k+1行遍历剩余行的第k列元素得到用于消元的系数，再用剩余行每个元素乘以对应系数减去第k行进行消元操作。其余方法结构一致，只是多了选主元和进行初等变换的过程，具体过程不再详述。
 
-​	如果从计算速度来说，使用Python进行科学计算本身不是一个明智的选择，因为Python是解释性语言，代码要一行一行由解释器进行解释再执行，运行的速度较慢，特别是当使用了5000*5000这样的大矩阵时，python需要的时间太久。如下图(3.3.1)是高斯消元过程矩阵从100*100到300*300时计算用时，计算300*300的矩阵需要12秒，且算法的时间复杂度为![img](file:////tmp/wps-liwei/ksohtml/wps6yfupE.jpg)，计算5000*5000矩阵需要用时估算为20个小时。
+​	如果从计算速度来说，使用Python进行科学计算本身不是一个明智的选择，因为Python是解释性语言，代码要一行一行由解释器进行解释再执行，运行的速度较慢，特别是当使用了5000*5000这样的大矩阵时，python需要的时间太久。如下图(3.3.1)是高斯消元过程矩阵从100*100到300*300时计算用时，计算300*300的矩阵需要12秒，且算法的时间复杂度为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps6yfupE.jpg)，计算5000*5000矩阵需要用时估算为20个小时。
 
-计算大矩阵时python有点力不从心，所需的时间太长了。此时第一个思路是使用C++，使用C++实现了高斯消元算法，测试了计算时间，相同阶数下比python的用时更短，但时间复制度依旧为![img](file:////tmp/wps-liwei/ksohtml/wps0dM5a1.jpg)，测试得到的曲线上升趋势比python的更快，估算得到计算5000*5000矩阵的用时超过一天。依旧不宜使用。
+计算大矩阵时python有点力不从心，所需的时间太长了。此时第一个思路是使用C++，使用C++实现了高斯消元算法，测试了计算时间，相同阶数下比python的用时更短，但时间复制度依旧为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps0dM5a1.jpg)，测试得到的曲线上升趋势比python的更快，估算得到计算5000*5000矩阵的用时超过一天。依旧不宜使用。
 
-![img](file:////tmp/wps-liwei/ksohtml/wpscc6IWn.jpg)![img](file:////tmp/wps-liwei/ksohtml/wps0JioIK.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscc6IWn.jpg)![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps0JioIK.jpg) 
 
 ​	最后程序选择了用python写，通过numba库的jit模块，可以将python内numpy类型的计算加速，通过将代码转化为机器码编译后运行，实际测试大大加速了程序的运行。
 
@@ -274,7 +272,7 @@ numba使用LLVM编译器架构将纯Python代码生成优化过的机器码从�
 
 在实际的测试时，分别收集了计算N从100到1100的用时，如下图所示，python使用了numb.jit装饰器后，计算用时比c++代码快了一个数量级。此时程序依旧是使用cpu单核在运行，这种模式下导入jit(Just-in-Time)装饰器只需在原来的代码中加一句话，如果使用GPU来运行计算，需要对代码进行全部重写，使用特定的语句实现运算，这种模式下如果成功运行在GPU上，则运算速度还会有一个数量级的提升。
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsCjP6t7.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsCjP6t7.jpg) 
 
  
 
@@ -284,11 +282,11 @@ numba使用LLVM编译器架构将纯Python代码生成优化过的机器码从�
 
 ​	测试矩阵为
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsSLNRfu.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsSLNRfu.png)
 
 在限定保留4位小数的情况下，三种算法的到的计算结果如下
 
-| 消元方法 | ![img](file:////tmp/wps-liwei/ksohtml/wpsqhHF1Q.jpg) | ![img](file:////tmp/wps-liwei/ksohtml/wpsC9jvNd.jpg) | ![img](file:////tmp/wps-liwei/ksohtml/wpsIWRmzA.jpg) |
+| 消元方法 | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqhHF1Q.jpg) | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsC9jvNd.jpg) | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsIWRmzA.jpg) |
 | -------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
 | 高斯消元 | -0.4                                                 | -0.0503                                              | 0.367                                                |
 | 列选主元 | -0.4902                                              | -0.0511                                              | 0.3676                                               |
@@ -309,25 +307,25 @@ numba使用LLVM编译器架构将纯Python代码生成优化过的机器码从�
 
 高斯‐若当算法可用于求逆，也可用于求解线性方程组。如下矩阵B用于测试高斯-若当算法。
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsAyvnlX.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsAyvnlX.png)
 
 计算得到结果如下
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsksWr7j.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsksWr7j.png)
 
 计算AB得到结果
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsw6xATG.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsw6xATG.png)
 
 ​	计算得到单位矩阵，结果符合预期。
 
 若构建增广矩阵时不是增加单位阵而是增加方程组的右边如下
 
-![img](file:////tmp/wps-liwei/ksohtml/wps4jaMF3.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps4jaMF3.png)
 
 计算得到结果如下
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsuhu0rq.png)
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsuhu0rq.png)
 
 **b**就是矩阵的解，结果保留4位后与理论解相同。
 
@@ -335,19 +333,19 @@ numba使用LLVM编译器架构将纯Python代码生成优化过的机器码从�
 
 **4****.2计算时间对比**
 
-​	三种算法中高斯消元计算过程最简单，列选主元在高斯消元的基础上多了一步行交换，而全选主元又在列选主元的基础上多了列交换及解的位置交换。三种算法的时间复杂度计算得到都是![img](file:////tmp/wps-liwei/ksohtml/wpsE6XheN.jpg)。三种算法实际运行用时如下
+​	三种算法中高斯消元计算过程最简单，列选主元在高斯消元的基础上多了一步行交换，而全选主元又在列选主元的基础上多了列交换及解的位置交换。三种算法的时间复杂度计算得到都是![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsE6XheN.jpg)。三种算法实际运行用时如下
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsKjtB09.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsKjtB09.jpg) 
 
-​	由上图可见，程序实际运行所用时间与分析相吻合，全选主元较其余两种算法运行所需时间更多，列选主元及高斯消元用时几乎相同。三种算法都符合时间复杂度为![img](file:////tmp/wps-liwei/ksohtml/wpscybXMw.jpg)。
+​	由上图可见，程序实际运行所用时间与分析相吻合，全选主元较其余两种算法运行所需时间更多，列选主元及高斯消元用时几乎相同。三种算法都符合时间复杂度为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscybXMw.jpg)。
 
-高斯-若当算法时间复杂度也是![img](file:////tmp/wps-liwei/ksohtml/wpsgcLkzT.jpg)，如下图是高斯-若当求逆算法计算n从10到100所需时间，程序未加速。实际时间符合算法的时间复杂度。
+高斯-若当算法时间复杂度也是![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsgcLkzT.jpg)，如下图是高斯-若当求逆算法计算n从10到100所需时间，程序未加速。实际时间符合算法的时间复杂度。
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsOHCKlg.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsOHCKlg.jpg) 
 
 ​	以上用时都是在未加速的情况下获得，若按照未加速时的趋势，5000*5000的矩阵将要花费几天。采用numba对python程序加速后对5000*5000进行消元求解得到下图
 
-![img](file:////tmp/wps-liwei/ksohtml/wpsYU8c8C.jpg) 
+![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsYU8c8C.jpg) 
 
 ​	计算用时基本符合预期，高斯-若当求解时要将系数矩阵化为单位阵，用时比其余多，全选主元多了列变换及解的位置变换，用时比列选主元长，列选主元和高斯消元用时基本一样。
 
