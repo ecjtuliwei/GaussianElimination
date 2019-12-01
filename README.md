@@ -26,13 +26,11 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscaFfQB.png) | (2.1.1) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 ​	或写为矩阵形式
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsMs9myY.png) | (2.1.2) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 简记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqlxxgl.jpg)，要求解线性方程组就是要求出![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmVAJYH.jpg)。
 
@@ -54,13 +52,11 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsEAdpHD.png) | (2.1.3) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 简记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsYqpTp0.jpg),其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsiR5o8m.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8poWQJ.jpg)的元素计算公式为
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsUsvvz6.jpg) | (2.1.4) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 (2) 第k次消元![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpssiN6ht.jpg).
 
@@ -68,7 +64,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsU61oJc.png) | (2.1.5) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 简记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsiLa8rz.jpg),设![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8nTSaW.jpg),计算乘数
 
@@ -86,7 +81,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmPXeBH.png) | (2.1.6) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 由方程组(2.1.1)化为方程组(2.1.6)的过程称为消元过程.
 
@@ -94,7 +88,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsGLaSMN.png) | (2.1.7) |
 | ---- | :--------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 方程组(2.1.6)的求解过程(2.1.7)称为回代过程.
 
@@ -122,7 +115,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsgYF9DJ.png) | (2.2.1) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps64zKn6.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpso6bn7s.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQin1QP.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqv8GAc.jpg).
 
@@ -134,7 +126,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsyxPo1o.png) | (2.2.2) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 回代求解的到**x****.**
 
@@ -162,7 +153,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsQazxXk.png) | (2.3.1) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsqbaKHH.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsYAsYr4.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsyBnecr.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps6kUvWN.jpg).
 
@@ -174,7 +164,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsmBsiG6.png) | (2.3.2) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 回代求解的到**x****1.**通过记录的位置信息交换**x****1**的元素的到**x****.**
 
@@ -202,7 +191,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsUaM7WF.png) | (2.4.1) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 其中![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpsko0ZH2.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wps8pQTsp.jpg)，![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscufPdM.jpg)的元素仍记为![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscuhMY8.jpg).
 
@@ -214,7 +202,6 @@
 
 |      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpswqk5wl.png) | (2.4.2) |
 | ---- | ---------------------------------------------------- | ------- |
-|      |                                                      |         |
 
 ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpswoBfiI.jpg)即为矩阵**A**的逆矩阵。
 
