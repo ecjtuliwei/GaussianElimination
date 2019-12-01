@@ -24,7 +24,7 @@
 
 
 
-|      | ![img](file://ksohtml/wpscaFfQB.png) | (2.1.1) |
+|      | ![img](https://github.com/ecjtuliwei/GaussianElimination/blob/master/ksohtml/wpscaFfQB.png) | (2.1.1) |
 | ---- | ---------------------------------------------------- | ------- |
 |      |                                                      |         |
 
